@@ -314,6 +314,7 @@ body {
   background-image: url(../img/footer-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   /* background-position: center bottom; */
   padding: 240px 0;
 }
