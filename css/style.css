@@ -62,6 +62,11 @@ body {
   justify-content: space-between;
 }
 
+.header-logo-link {
+  display: flex;
+
+}
+
 .header-logo-link svg {
   color: #333;
 }
@@ -93,12 +98,7 @@ body {
 }
 
 .header-list-item-link:hover {
-  border-bottom: 3px solid #333333;
-}
-
-.header-list-item-link {
-  padding-top: 6px;
-  padding-bottom: 3px;
+  border-bottom: 3px solid #333;
 }
 
 .header-list-item-link {
@@ -110,6 +110,8 @@ body {
   font-size: 15px;
   line-height: 150%;
   color: #333;
+  padding-top: 6px;
+  padding-bottom: 3px;
 }
 
 .header-list-item-link:hover {
@@ -131,20 +133,15 @@ body {
 
 /* HERO  */
 .hero {
-  background-image: url(../img/intro-bg.jpg);
+  background-image: url(../img/hero-bg-img.jpg);
   background-repeat: no-repeat;
-  background-position: center right;
+  background-position: left calc(50% + 500px) center;
+  background-size: contain;
   padding-top: 100px;
   padding-bottom: 185px;
-
   border-bottom: 2px solid #ddd;
 }
 
-.hero-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
 .hero-content {
   width: 100%;
@@ -242,42 +239,41 @@ body {
   align-items: center;
 }
 
-.about-list-footer-box {
+.about-item-footer {
   width: 8px;
   height: 8px;
+  border: 0;
   background-color: #ddd;
+  margin-top: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+  box-shadow: 16px 0 0 #ddd,
+    32px 0 0 #ddd;
 }
 
-.about-list-footer-box:not(:last-child) {
-  margin-right: 10px;
-}
-
-.about-list-footer-line {
-  border: 3px solid #EA625C;
-  width: 60px;
-  height: 0px;
-  margin: 0;
-  padding: 0;
-  margin-right: 10px;
-}
-
-.about-list-footer-link {
-  text-decoration: none;
+.about-item-footer-link {
+  display: inline-flex;
+  align-items: center;
   font-weight: 700;
   font-size: 16px;
   line-height: 160%;
   text-transform: uppercase;
   color: #ea625c;
+  text-decoration: none;
 }
 
-.about-list-footer-link:hover {
-  color: var(--accent-color);
-  opacity: 0.8;
+.about-item-footer-link::before {
+  transition: width 0.3s ease;
+  width: 40px;
+  height: 0;
+  margin-right: 10px;
+  border: 3px solid #ea625c;
+  background-image: url(../img/about-before-img.svg);
+  content: '';
 }
 
-.about-list-footer-link:active {
-  color: var(--accent-color);
-  opacity: 0.6;
+.about-item-footer-link:hover::before {
+  width: 60px;
 }
 
 /* INTRO  */
@@ -350,4 +346,19 @@ body {
 
 .button-footer {
   padding: 12px 46px;
+}
+
+
+
+/* RETINA BG IMG  */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+  .hero {
+    background-image: url(../img/hero-bg-img@2x.jpg);
+  }
 }
